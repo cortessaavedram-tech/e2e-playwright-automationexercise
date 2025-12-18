@@ -1,6 +1,6 @@
-# Playwright E2E Automation Exercise
+# Playwright E2E NTT Data
 
-This project performs E2E tests on the [Automation Exercise](https://automationexercise.com/) website, generating a report of results and video recordings. Tests are executed on **Chrome** (desktop) and emulated mobile device.
+This project performs E2E tests on the [NTT Data](https://es.nttdata.com/) website, generating a report of results and video recordings. Tests are executed on **Chrome** (desktop) and emulated mobile device.
 
 ## Technologies
 
@@ -11,7 +11,7 @@ This project performs E2E tests on the [Automation Exercise](https://automatione
 
 You can view the test status using the following **GitHub Actions** badge:
 
-![Test Workflow](https://github.com/cortessaavedram-tech/e2e-playwright-automationexercise/actions/workflows/playwright_tests.yml/badge.svg)
+![Test Workflow](https://github.com/cortessaavedram-tech/e2e-playwright-nttdata/actions/workflows/playwright_tests.yml/badge.svg)
 
 ## Requirements
 
