@@ -1,4 +1,6 @@
 from playwright.sync_api import Page, expect
+import re
+
 
 def test_visit_menu_links(page: Page):
     print("Given the user is on the homepage")
@@ -12,11 +14,21 @@ def test_visit_menu_links(page: Page):
     #Assertion
     print("Then the user should be redirected to the 'Industries' page")
     expect(page).to_have_url("https://es.nttdata.com/industries")
+    print("And the user should see the 'Industries' heading")
+    expect(page.get_by_role("heading", name="Industries")).to_be_visible()
     
 
 
     print("And the user clicks on the 'Services' menu link")
     page.get_by_role("button", name="Services", exact=True).click()
+    print("And clicks on the 'Services' link")
+    page.get_by_role("link", name="Services").first.click()
+    #Assertion
+    print("Then the user should be redirected to the 'Services' page")
+    expect(page).to_have_url("https://es.nttdata.com/services")
+
+
+
 
     print("And the user clicks on the 'Products' menu link")
     page.locator("#navbarLevel0Collapse").get_by_role("link", name="Products").first.click()
