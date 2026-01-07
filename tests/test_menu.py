@@ -7,6 +7,13 @@ def test_visit_menu_links(page: Page):
     print("When the user clicks on the 'Industries' menu link")
     #Localize the element by role (cutton, link, heading...) and by text
     page.get_by_role("button", name="Industries", exact=True).click()
+    print("And clicks on the 'Industries' link")
+    page.get_by_role("link", name="Industries").first.click()
+    #Assertion
+    print("Then the user should be redirected to the 'Industries' page")
+    expect(page).to_have_url("https://es.nttdata.com/industries")
+    
+
 
     print("And the user clicks on the 'Services' menu link")
     page.get_by_role("button", name="Services", exact=True).click()
