@@ -15,7 +15,7 @@ def test_visit_menu_links(page: Page):
     print("Then the user should be redirected to the 'Industries' page")
     expect(page).to_have_url("https://es.nttdata.com/industries")
     print("And the user should see the 'Industries' heading")
-    expect(page.get_by_role("heading", name="Industries")).to_be_visible()
+    expect(page.get_by_role("heading", name="Industries").first).to_be_visible()
     
 
 
