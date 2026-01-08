@@ -12,16 +12,16 @@ def test_visit_menu_links(page: Page):
     page.get_by_role("button", name="Industries", exact=True).click()
     print("And clicks on the 'Industries' link")
     page.get_by_role("link", name="Industries").first.click()
-    #Assertion url
+    #Assertion using url
     print("Then the user should be redirected to the 'Industries' page")
     expect(page).to_have_url("https://es.nttdata.com/industries")
-    #Assertion heading
+    #Assertion using heading
     print("And the user should see the 'Industries' heading")
     expect(page.get_by_role("heading", name="Industries").first).to_be_visible()
     
 
     #Services
-    print("And the user clicks on the 'Services' menu link")
+    print("When the user clicks on the 'Services' menu link")
     page.get_by_role("button", name="Services", exact=True).click()
     print("And clicks on the 'Services' link")
     page.get_by_role("link", name="Services").first.click()
@@ -31,7 +31,7 @@ def test_visit_menu_links(page: Page):
 
 
     #Products
-    print("And the user clicks on the 'Products' menu link")
+    print("When the user clicks on the 'Products' menu link")
     page.locator("#navbarLevel0Collapse").get_by_role("link", name="Products").first.click()
     #Assertion
     print("Then the user should be redirected to the 'Products' page")
@@ -39,7 +39,7 @@ def test_visit_menu_links(page: Page):
 
 
     #Insights
-    print("And the user clicks on the 'Insights' menu link")
+    print("When the user clicks on the 'Insights' menu link")
     page.get_by_role("button", name="Insights", exact=True).click()
     print("And clicks on the 'Insights' link")
     page.locator("#collapseLeft3").get_by_role("link", name="Insights").click() 
@@ -48,10 +48,14 @@ def test_visit_menu_links(page: Page):
     expect(page).to_have_url("https://es.nttdata.com/all-insights")
     
 
-
-    print("And the user clicks on the 'About us' menu link")
+    #About us
+    print("When the user clicks on the 'About us' menu link")
     page.get_by_role("button", name="About us", exact=True).click()
+    print("And clicks on the 'About us' link")
+    page.get_by_role("link", name="About us", exact=True).click()
+    #Assertion
+    print("Then the user should be redirected to the 'About us' page")
+    expect(page).to_have_url("https://es.nttdata.com/about-us")
 
-    print("And the user clicks on the 'Careers' menu link")
-    page.get_by_role("button", name="Careers", exact=True).click()
+
     
